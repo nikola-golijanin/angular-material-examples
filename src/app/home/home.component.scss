@@ -1,7 +1,5 @@
-
-
 .courses-panel {
-    max-width: 400px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -19,5 +17,19 @@ h2 {
 .title {
   text-align: center;
   margin-right: 15px;
+}
 
+.handset-portrait .course-card {
+  width: 100%;
+  margin: 0;
+  padding: 16px 0;
+}
+
+.handset-portrait .course-thumbnail {
+  width: 100%;
+  margin: 0;
+}
+
+.handset-portrait .long-description {
+  padding: 10px 10px 0 10px;
 }
