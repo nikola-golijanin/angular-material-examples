@@ -90,4 +90,30 @@ export class DragDropComponent {
     }
   ];
 
+  doneLessons = []
+
+  //Swam elements on same dropList
+  drop($event: CdkDragDrop<Lesson[]>) {
+    //Manually swap elements
+    // [this.lessons[$event.previousIndex], this.lessons[$event.currentIndex]] = [this.lessons[$event.currentIndex], this.lessons[$event.previousIndex]];
+
+    //Angular utility function
+    moveItemInArray(this.lessons, $event.previousIndex, $event.currentIndex);
+  }
+
+  //Drag and drop between lists and in same list
+  dropMultiList($event: CdkDragDrop<Lesson[]>) {
+    //Drag and drop in the same list
+    if ($event.previousContainer == $event.container) {
+      moveItemInArray($event.container.data, $event.previousIndex, $event.currentIndex);
+      return;
+    }
+
+    //Drag and drop to other list
+    transferArrayItem(
+      $event.previousContainer.data,
+      $event.container.data,
+      $event.previousIndex,
+      $event.currentIndex)
+  }
 }
