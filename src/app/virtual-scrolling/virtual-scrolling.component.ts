@@ -8,11 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class VirtualScrollingComponent implements OnInit {
 
-  items = Array.from({length: 100}).map((value, i) => `Item #${i}`);
+  items = Array.from({length: 200000}).map((_value, i) => `Item #${i}`);
 
-  ngOnInit() {
-
-  }
-
-
+  ngOnInit() {}
 }
